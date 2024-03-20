@@ -12,7 +12,7 @@
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
         <style>
             body {
-                background-color: #B0C4DE;
+                background-color: #B0C4DE;                
             }
         </style>
     </head>
@@ -20,7 +20,11 @@
         <center><h1><b>Controle de EPI's</b></h1></center>
         <hr/>
         <br/>
-        <center><button type="button" class="btn btn-outline-dark" data-bs-toggle="modal" data-bs-target="#exampleModal">Cadastrar Entrega</button></center>
+        <center>
+            <button type="button" class="btn btn-outline-dark" data-bs-toggle="modal" data-bs-target="#exampleModal">Cadastrar Entrega</button>
+            <a class="btn btn-outline-dark" href="listarEpiVencidas.php" role="button">Listar EPI's vencidas</a>
+            <a class="btn btn-outline-dark" href="listarEpiAvencer.php" role="button">Listar EPI's a vencer</a>
+        </center>
         <br/>
         <main>
             <div class="container">
