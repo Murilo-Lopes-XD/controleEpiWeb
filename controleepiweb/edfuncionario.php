@@ -1,7 +1,8 @@
 <?php
     include 'conecta.php';
     $timezone = new DateTimeZone('America/Sao_Paulo');
-    $matricula = $_GET['matricula'];
+    $id = $_GET['id'];
+    $matricula = $_POST['matricula'];
     $nome = $_POST['nome'];
     $epi = $_POST['epi'];    
     $dias = $_POST['validade'];
@@ -12,7 +13,7 @@
     $data_entrega_formatada = $data_entrega->format("Y-m-d");
     $data_validade_formatada = $data_vencimento->format("Y-m-d");
     
-    $sql = "UPDATE funcionario SET nome='$nome',epi='$epi',data_entrega='$data_entrega_formatada',data_vencimento='$data_validade_formatada' WHERE matricula='$matricula'";
+    $sql = "UPDATE funcionario SET matricula='$matricula',nome='$nome',epi='$epi',data_entrega='$data_entrega_formatada',data_vencimento='$data_validade_formatada' WHERE id='$id'";
     if (mysqli_query($conn, $sql)) {
         echo "<script language= 'javascript' type='text/javascript'>
                 window.location.href='index.php';

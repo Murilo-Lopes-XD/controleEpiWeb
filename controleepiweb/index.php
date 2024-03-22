@@ -21,9 +21,9 @@
         <hr/>
         <br/>
         <center>
-            <button type="button" class="btn btn-outline-dark" data-bs-toggle="modal" data-bs-target="#exampleModal">Cadastrar Entrega</button>
+            <button type="button" class="btn btn-outline-success" data-bs-toggle="modal" data-bs-target="#exampleModal">Cadastrar Entrega</button>
             <a class="btn btn-outline-dark" href="listarEpiVencidas.php" role="button">Listar EPI's vencidas</a>
-            <a class="btn btn-outline-dark" href="listarEpiAvencer.php" role="button">Listar EPI's a vencer</a>
+            <a class="btn btn-outline-secondary" href="listarEpiAvencer.php" role="button">Listar EPI's a vencer</a>
         </center>
         <br/>
         <main>
@@ -40,7 +40,7 @@
                             <div class="card-body">
                                 <?php
                                 include 'funcionarios.php';
-                                ?>
+                                ?>                                
                             </div>
                         </div>
                     </div> 
@@ -56,6 +56,8 @@
                     </div>
                     <div class="modal-body">
                         <form action="cadfuncionario.php" method="post">
+                            <label>MATRICULA</label>
+                            <input type="number" class="form-control" name="matricula" placeholder="Digite a matrícula do Funcionário" required/>
                             <label>NOME</label>
                             <input type="text" class="form-control" name="nome" placeholder="Digite o nome do Funcionário" required/>
                             <label>EPI</label>

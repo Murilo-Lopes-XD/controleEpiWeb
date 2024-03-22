@@ -35,7 +35,9 @@
                                 <?php
                                 include 'epi.php';
                                 ?>
-                                </div>
+                                <br/>
+                                <a class="btn btn-outline-danger" href="index.php" role="button">Voltar</a>
+                                </div>                                
                         </div>
                     </div> 
                 </div>

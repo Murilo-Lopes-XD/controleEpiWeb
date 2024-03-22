@@ -18,14 +18,17 @@
         echo "<tbody>";        
         while ($registro = $funcionario->fetch_array())
         {
+            $data_entrega_formatada = $registro['data_entrega'];
+            $data_validade_formatada = $registro['data_vencimento'];
             $matricula = $registro['matricula'];
+            $id = $registro['id'];
             echo '<tr>';
             echo '<td>'.$registro['matricula'].'</td>';
             echo '<td>'.$registro['nome'].'</td>';
             echo '<td>'.$registro['epi'].'</td>';
-            echo '<td>'.$registro['data_entrega'].'</td>';
-            echo '<td>'.$registro['data_vencimento'].'</td>';
-            echo '<td><a href="editar.php?matricula='.$matricula.'"><svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="green" class="bi bi-pencil-square" viewBox="0 0 16 16">
+            echo '<td>'.date("d/m/Y", strtotime($data_entrega_formatada)).'</td>';
+            echo '<td>'.date("d/m/Y", strtotime($data_validade_formatada)).'</td>';
+            echo '<td><a href="editar.php?id='.$id.'"><svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="green" class="bi bi-pencil-square" viewBox="0 0 16 16">
             <path d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z"/>
             <path fill-rule="evenodd" d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5z"/>
             </svg></a> | <a><svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="red" class="bi bi-trash3" viewBox="0 0 16 16" style="cursor: pointer;" data-bs-toggle="modal" data-bs-target="#confirmacaoModal">
@@ -45,7 +48,7 @@
                         </div>
                         <div class="modal-footer">
                             <form action="excluir.php" method="get">
-                                <input type="hidden" name="matricula" value="'.$matricula.'">                            
+                                <input type="hidden" name="id" value="'.$id.'">                            
                                 <button type="submit" class="btn btn-outline-success"><b>Confirmar</b></button>
                                 <button type="button" class="btn btn-outline-danger" data-bs-dismiss="modal">Fechar</button>
                             </form>                     

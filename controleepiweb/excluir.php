@@ -1,7 +1,7 @@
 <?php
     include 'conecta.php';
-    $matricula = $_GET['matricula'];
-    $sql = "DELETE FROM funcionario WHERE matricula=$matricula";
+    $id = $_GET['id'];
+    $sql = "DELETE FROM funcionario WHERE id=$id";
     if (mysqli_query($conn,$sql)) {
         echo "<script language= 'javascript' type='text/javascript'>
                 window.location.href='index.php';

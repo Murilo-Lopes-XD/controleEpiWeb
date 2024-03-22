@@ -34,19 +34,22 @@
                             <div class="card-body text-start">
                                 <?php
                                     include 'conecta.php';
-                                    $matricula = $_GET['matricula'];
-                                    $sql = "SELECT * FROM funcionario WHERE matricula=$matricula";
+                                    $id = $_GET['id'];
+                                    $sql = "SELECT * FROM funcionario WHERE id=$id";
                                     $query = $conn->query($sql);
-                                    while ($dados = $query->fetch_array()) {
+                                    while ($dados = $query->fetch_array()){
+                                        $matricula = $dados['matricula'];
                                         $nome = $dados['nome'];
                                         $epi = $dados['epi'];
                                         $data_entrega = $dados['data_entrega'];
                                         $data_vencimento = $dados['data_vencimento'];
                                     }
-                                ?>
+                                ?>                                
                                 <div class="modal-body">
 
-                                    <form action="edfuncionario.php?matricula=<?php echo $matricula ?>" method="post">
+                                    <form action="edfuncionario.php?id=<?php echo $id ?>" method="post">
+                                        <label>MATRICULA</label>
+                                        <input type="text" class="form-control" name="matricula" value="<?php echo $matricula; ?>" required/>
                                         <label>NOME</label>
                                         <input type="text" class="form-control" name="nome" value="<?php echo $nome; ?>" required/>
                                         <label>EPI</label>
@@ -58,6 +61,7 @@
                                         <label>ANTIGA DATA DE VENCIMENTO: <b><?php echo $data_vencimento?></b></label>                          
                                         </br>
                                         <button type="submit" class="btn btn-outline-success"><b>ATUALIZAR</b></button>
+                                        <a class="btn btn-outline-danger" href="index.php" role="button">Voltar</a>
                                     </form>
                                 </div>
                             </div>

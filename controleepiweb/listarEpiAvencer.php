@@ -35,6 +35,8 @@
                                 <?php
                                 include 'epiVencer.php';
                                 ?>
+                                <br/>
+                                <a class="btn btn-outline-danger" href="index.php" role="button">Voltar</a>
                                 </div>
                         </div>
                     </div> 
